@@ -1,59 +1,71 @@
-# Av1
+# Gerenciador de Tarefas - Estudos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.5.
+Aplicação web desenvolvida em Angular como parte da disciplina de Programação Web 1.
 
-## Development server
+O projeto consiste em um gerenciador de tarefas com 3 colunas (Para fazer, Em andamento e Concluídas), construído com Angular, Tailwind CSS e Signals.
 
-To start a local development server, run:
+## Tecnologias utilizadas
+
+- Angular 21
+- Tailwind CSS
+- TypeScript
+- Signals (gerenciamento de estado)
+
+## Como rodar o projeto
+
+### Pré-requisitos
+
+- Node.js instalado
+- Angular CLI instalado globalmente (`npm install -g @angular/cli`)
+
+### Instalação
+
+Clone o repositório e instale as dependências:
+
+```bash
+git clone https://github.com/Igor-AI-Coder/av1.git
+cd av1
+npm install
+```
+
+### Servidor de desenvolvimento
+
+Para iniciar o servidor local, rode:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse no navegador: `http://localhost:4200/`
 
-## Code scaffolding
+A aplicação recarrega automaticamente ao salvar qualquer arquivo.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Estrutura do projeto
+src/
+└── app/
+├── components/
+│   ├── task-card/       # Card individual de tarefa
+│   ├── task-column/     # Coluna do quadro (Para fazer, Em andamento, Concluídas)
+│   └── task-modal/      # Modal de criação e edição de tarefas
+├── models/
+│   └── task.model.ts    # Interface Task
+├── services/
+│   └── task.ts          # Serviço com os dados e lógica das tarefas
+├── app.component.ts
+└── app.component.html
+## Funcionalidades
 
-```bash
-ng generate component component-name
-```
+- Visualizar tarefas organizadas em 3 colunas
+- Adicionar nova tarefa com título, descrição, data de término, prioridade e status
+- Editar tarefas existentes
+- Excluir tarefas
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Build
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Para gerar a versão de produção:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Os arquivos gerados ficam na pasta `dist/`.
