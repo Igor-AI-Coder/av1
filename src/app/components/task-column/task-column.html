@@ -1,0 +1,12 @@
+<div class="flex-1 min-h-64">
+  <h2 class="font-semibold text-gray-700 mb-3">{{ title }}</h2>
+  <div class="bg-gray-50 rounded-lg border border-gray-200 p-3 min-h-52">
+    @for (task of tasks; track task.id) {
+      <app-task-card
+        [task]="task"
+        (edit)="editTask.emit($event)"
+        (delete)="deleteTask.emit($event)"
+      />
+    }
+  </div>
+</div>

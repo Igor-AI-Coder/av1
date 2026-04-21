@@ -1,0 +1,53 @@
+<div class="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+  <div class="bg-white rounded-xl p-6 w-full max-w-md shadow-xl">
+    <h2 class="text-lg font-bold mb-4 text-gray-800">
+      {{ taskToEdit ? 'Editar Tarefa' : 'Nova Tarefa' }}
+    </h2>
+
+    <div class="flex flex-col gap-3">
+      <input
+        [(ngModel)]="form.title"
+        placeholder="Título"
+        class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+      />
+      <textarea
+        [(ngModel)]="form.description"
+        placeholder="Descrição"
+        rows="2"
+        class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+      ></textarea>
+      <input
+        [(ngModel)]="form.dueDate"
+        type="date"
+        class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+      />
+      <select
+        [(ngModel)]="form.priority"
+        class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+      >
+        <option>Alta</option>
+        <option>Média</option>
+        <option>Baixa</option>
+      </select>
+      <select
+        [(ngModel)]="form.status"
+        class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+      >
+        <option value="todo">Para fazer</option>
+        <option value="inProgress">Em andamento</option>
+        <option value="done">Concluídas</option>
+      </select>
+    </div>
+
+    <div class="flex justify-end gap-2 mt-5">
+      <button
+        (click)="close.emit()"
+        class="px-4 py-2 text-sm rounded-lg border border-gray-300 hover:bg-gray-100"
+      >Cancelar</button>
+      <button
+        (click)="submit()"
+        class="px-4 py-2 text-sm rounded-lg bg-indigo-600 text-white hover:bg-indigo-700"
+      >Salvar</button>
+    </div>
+  </div>
+</div>

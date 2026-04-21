@@ -1,0 +1,16 @@
+<div class="bg-white rounded-lg border border-gray-200 p-4 mb-3 shadow-sm">
+  <div class="flex items-center justify-between mb-1">
+    <div class="flex items-center gap-2 min-w-0">
+      <span class="w-3 h-3 rounded-full flex-shrink-0 {{ priorityColor }}"></span>
+      <span class="font-semibold text-gray-800 text-sm truncate">{{ task.title }}</span>
+    </div>
+    <div class="flex gap-3 ml-3 flex-shrink-0">
+      <button (click)="edit.emit(task)" class="text-gray-500 text-xs hover:underline">Editar</button>
+      <button (click)="delete.emit(task.id)" class="text-red-500 text-xs hover:underline">Excluir</button>
+    </div>
+  </div>
+  <p class="text-xs {{ priorityTextColor }} mb-1">
+    Término: {{ task.dueDate }} • {{ task.priority }}
+  </p>
+  <p class="text-sm text-gray-600">{{ task.description }}</p>
+</div>
